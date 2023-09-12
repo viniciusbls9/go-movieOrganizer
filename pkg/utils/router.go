@@ -21,9 +21,10 @@ func CreateRouters() error {
 	}))
 
 	v1Router := chi.NewRouter()
-	v1Router.Get("/healthz", usecases.GetMovies)
 	v1Router.Get("/movies", usecases.GetMovies)
 	v1Router.Post("/movies", usecases.CreateMovie)
+	v1Router.Delete("/movies/{movieID}", usecases.DeleteMovie)
+	v1Router.Put("/movies/{movieID}", usecases.UpdateMovie)
 
 	router.Mount("/v1", v1Router)
 
