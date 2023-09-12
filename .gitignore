@@ -1,2 +1,3 @@
-vendor
 .env
+movie.db
+go-movie
